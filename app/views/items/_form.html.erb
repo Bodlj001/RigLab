@@ -1,0 +1,72 @@
+<%= form_with(model: item) do |form| %>
+  <% if item.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+        <% item.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :type, style: "display: block" %>
+    <%= form.text_field :type %>
+  </div>
+
+  <div>
+    <%= form.label :price, style: "display: block" %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div>
+    <%= form.label :visual_condition, style: "display: block" %>
+    <%= form.text_field :visual_condition %>
+  </div>
+
+  <div>
+    <%= form.label :graphics, style: "display: block" %>
+    <%= form.text_field :graphics %>
+  </div>
+
+  <div>
+    <%= form.label :storage_type, style: "display: block" %>
+    <%= form.text_field :storage_type %>
+  </div>
+
+  <div>
+    <%= form.label :storage_quantity, style: "display: block" %>
+    <%= form.text_field :storage_quantity %>
+  </div>
+
+  <div>
+    <%= form.label :processor, style: "display: block" %>
+    <%= form.text_field :processor %>
+  </div>
+
+  <div>
+    <%= form.label :model, style: "display: block" %>
+    <%= form.text_field :model %>
+  </div>
+
+  <div>
+    <%= form.label :model_identifier, style: "display: block" %>
+    <%= form.text_field :model_identifier %>
+  </div>
+
+  <div>
+    <%= form.label :serial_number, style: "display: block" %>
+    <%= form.text_field :serial_number %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
